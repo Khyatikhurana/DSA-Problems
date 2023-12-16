@@ -3,7 +3,7 @@ class Solution(object):
         index=-1 #break point
         n=len(nums)
         # Step 1: Find the break point:
-        for i in range(n-2,-1,-1):
+        for i in range(n-2,-1,-1): #iterates from second last to first element
             if nums[i]<nums[i+1]:
                 index=i #i is the break point
                 break
@@ -15,7 +15,7 @@ class Solution(object):
         
         for i in range(n-1,index,-1):
             if nums[i]>nums[index]:
-                nums[i],nums[index]=nums[index],nums[i]
+                nums[i],nums[index]=nums[index],nums[i] #swap with element at break point
                 break
         
         #reverse right hand side
