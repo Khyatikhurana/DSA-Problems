@@ -14,19 +14,17 @@ public class Solution {
         if(head == null){
             return false;
         }
-        ListNode H = head;
-        ListNode T = head;
-        
-        while(H != null && H.next != null){
-            H = H.next.next;
-            T = T.next;
-            if(H == T){
+        ListNode hare = head;
+        ListNode turt = head;
+        while(hare != null && hare.next!= null){
+            hare = hare.next.next;
+            turt = turt.next;
+            if(turt == hare){
                 return true;
             }
-            
         }
-        
         return false;
+        
         
         
     }
