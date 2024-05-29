@@ -13,26 +13,24 @@ class Solution {
         if(head.next == null){
             return null;
         }
-        
-        ListNode currNode = head;
-        int size = 0;
-        while(currNode != null){
-            currNode = currNode.next;
+        int size = 0;   
+        ListNode curr = head;
+        while(curr != null){
+            curr = curr.next;
             size++;
         }
-        //[1,2] n = 2
-        if(n == size){
+        
+        //we are deleting head
+        if( n== size){
             return head.next;
         }
-        
-        // ListNode dfs = size - n + 1;
-        int index = size - n;
-        ListNode prev = head;    
+        int indexToSearch = size - n;
+        ListNode prev = head;
         int i = 1;
-       while(i < index){
-           prev = prev.next;
-           i++;
-       } 
+        while(i<indexToSearch){
+            prev = prev.next;
+            i++;
+        }
         prev.next = prev.next.next;
         return head;
         
