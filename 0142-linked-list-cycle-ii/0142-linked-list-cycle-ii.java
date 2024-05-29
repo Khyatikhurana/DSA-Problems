@@ -14,33 +14,30 @@ public class Solution {
         if(head == null){
             return null;
         }
-        //detetcing cycle
-        ListNode H = head;
-        ListNode T = head;
+        
+        ListNode slow = head;
+        ListNode fast = head;
         boolean cycle = false;
         
-        while(H != null && H.next != null){
-            H = H.next.next;
-            T = T.next;
-            if(H == T){
-               cycle = true;
+        while(fast != null && fast.next != null ){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow){
+                cycle = true;
                 break;
             }
-            
         }
+        
         if(!cycle){
             return null;
         }
         
-        T = head;
-        while(T != H){
-            T = T.next;
-            H = H.next;
+        slow = head;
+        while(slow != fast){
+            slow = slow.next;
+            fast = fast.next;
         }
-        
-        return T;
-        
-        
+        return slow;
         
     }
 }
