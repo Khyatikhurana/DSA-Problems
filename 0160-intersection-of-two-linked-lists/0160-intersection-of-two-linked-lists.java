@@ -29,7 +29,7 @@ public class Solution {
                 d2 = d2.next;
         }
         
-        return d1;
+        return d1; // if no intersection, they will reach null at the same time
         
         
     }
