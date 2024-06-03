@@ -9,7 +9,7 @@ class Solution {
         
         for(int i = idx; i< arr.length; i++){
 
-        if(i > idx && arr[i] == arr[i-1]) continue; //skip duplicates
+        if(i != idx && arr[i] == arr[i-1]) continue; //skip duplicates
         if(arr[i] > target) break; //break if curr num > target
             ds.add(arr[i]);
             //pick
